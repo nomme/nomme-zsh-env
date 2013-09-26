@@ -67,19 +67,7 @@ function precmd()
 }
 
 HOST=`hostname`
-if [[ "rebound" == $HOST ]];
+if [[ -f "$HOME/.zsh/profiles/zsh.$HOST" ]]
 then
-  source ~/.zsh/profiles/zsh.rebound 2> /dev/null
-elif [[ "asylum" == $HOST ]];
-then
-  source ~/.zsh/profiles/zsh.asylum 2> /dev/null
-elif [[ "htpc" == $HOST ]];
-then
-  source ~/.zsh/profiles/zsh.htpc 2> /dev/null
-elif [[ "gbguxs10" == $HOST ]];
-then
-  source ~/.zsh/profiles/zsh.gbguxs10 2> /dev/null
-elif [[ "campgrounds" == $HOST ]];
-then
-  source ~/.zsh/profiles/zsh.campgrounds 2> /dev/null
+  source $HOME/.zsh/profiles/zsh.$HOST 2> /dev/null
 fi
