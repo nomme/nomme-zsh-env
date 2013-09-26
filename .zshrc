@@ -5,6 +5,7 @@ alias ls='ls --color=auto'
 alias grep='grep --colour=auto'
 alias rm='rm -i'
 alias l='ls -hl --color=auto'
+alias la='ls -hla --color=auto'
 alias gs='git status'
 
 bindkey "^W" "vi-backward-kill-word"
@@ -21,6 +22,9 @@ export PAGER=less
 export HISTSIZE=2000
 export SAVEHIST=20000
 export HISTFILE=~/.zhistory
+
+setopt cshjunkiequotes #command must match qoutes
+setopt noclobber # redirect to existing file with >!
 setopt extended_history
 setopt inc_append_history
 setopt hist_ignore_space
