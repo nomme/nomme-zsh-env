@@ -1,4 +1,3 @@
-source /etc/profile
 export prompt_color="$fg_brown"
 export TERM=dtterm
 export TERMINFO=/home/jhogklin/.terminfo
