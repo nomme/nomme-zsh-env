@@ -81,7 +81,7 @@ alias mt='~/local/Tools/Scripts/build_test.sh'
 alias rg='grep -rI --color=auto'
 alias myps='ps -leaf | grep jhogklin'
 alias level='ps -o comm $PID | grep zsh | wc -l'
-alias zsh='/home/jhogklin/local/zsh/bin/zsh'
+#alias zsh='/home/jhogklin/local/zsh/bin/zsh'
 alias chrome='chromium-browser  --proxy-server=http://webproxy.scan.bombardier.com'
 
 # navigation

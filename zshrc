@@ -43,19 +43,27 @@ export RPROMPT="%F${fg_green}%~%f"
 
 # Git
 source $HOME/.zsh/completion/git
-GIT_PS1_SHOWUPSTREAM=auto
+#GIT_PS1_SHOWUPSTREAM=auto
+#GIT_PS1_SHOWUNTRACKEDFILES=true
+#GIT_PS1_SHOWDIRTYSTATE=true
+#GIT_PS1_SHOWSTASHSTATE=true
+#GIT_PS1_DESCRIBE_STYLE=contains
+#GIT_PS1_SHOWCOLORHINTS=true
+
+GIT_PS1_SHOWUPSTREAM=verbose
 GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_DESCRIBE_STYLE=contains
 GIT_PS1_SHOWCOLORHINTS=true
+
 function precmd()
 {
   if [ "root" = "$USER" ];
   then
     export PROMPT="%B%F${fg_red}%m%k ${RED}$(__git_ps1 '[%s]')${fg_blue} %# %b%f%k"
   else
-    export PROMPT="%B%F${prompt_color}%n@%m%k%B%F ${RED}$(__git_ps1 '[%s]')${fg_blue} %# %b%f%k"
+    export PROMPT="%B%F${prompt_color}%n@%m%k%B%F ${RED}$(__git_ps1 '[%s]') ${fg_blue} %# %b%f%k"
   fi
 
   xrp="`extended_rprompt 2> /dev/null`"
