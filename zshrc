@@ -79,3 +79,10 @@ if [[ -f "$HOME/.zsh/profiles/zsh.$HOST" ]]
 then
   source $HOME/.zsh/profiles/zsh.$HOST 2> /dev/null
 fi
+
+#cat /etc/os-release | grep NAME | cut -d'"' -f 2
+DIST=`cat /etc/os-release | grep NAME | grep -Eo "Arch|Gentoo" | head -1`
+if [[ -f "$HOME/.zsh/profiles/zsh.$DIST" ]]
+then
+  source $HOME/.zsh/profiles/zsh.$DIST 2> /dev/null
+fi
