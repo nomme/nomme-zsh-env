@@ -11,3 +11,5 @@ lastupdate()
   fi
   echo "`hostname`: Last update $date $critial($days days ago)"
 }
+
+lastupdate
