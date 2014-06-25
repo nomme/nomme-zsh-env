@@ -103,6 +103,7 @@ alias kaz2='Runtmuxinit.sh kaz2'
 alias bv1='Runtmuxinit.sh bv1'
 alias bv2='Runtmuxinit.sh bv2'
 
+alias itt='~/scripts/itt_parse.py ~/gbguxs10/ConfigData/kaz_first/SWC_TCC_Uz_Bol_2.8/ConfigData/ConfigData.xml'
 # GBGUXS10
 #
 #Boost
@@ -140,3 +141,7 @@ XERCES_ROOT=/opt/xerces; export XERCES_ROOT
 #
 SQLCONNCPP_ROOT=/opt/tccdevelopment/mysqlcppconn; export SQLCONNCPP_ROOT
 
+if [[ -z "$DISPLAY" && $(tty) == /dev/tty1 ]]
+then
+    startx
+fi
