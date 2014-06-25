@@ -8,6 +8,7 @@ alias l='ls -hl --color=auto'
 alias la='ls -hla --color=auto'
 alias gs='git status'
 
+bindkey -e
 bindkey "^W" "vi-backward-kill-word"
 
 #completion
@@ -18,6 +19,7 @@ compinit
 autoload -U promptinit
 promptinit
 
+export EDITOR=vim
 export PAGER=less
 export HISTSIZE=2000
 export SAVEHIST=20000
