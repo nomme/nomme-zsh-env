@@ -3,6 +3,7 @@ export TERM=dtterm
 export TERMINFO=/home/jhogklin/.terminfo
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/local/temp/lib:/usr/local/lib:$HOME/local/lib
 export BUILDSERVER="gbguxs10"
+export BUILDSERVERHOME="/export/home/Users/jhogklin"
 #
 # autocompletion colors
 eval `dircolors -b`
@@ -39,6 +40,10 @@ bv()
 {
   export CURRENTPROJ="TCC_ER_BV_SW"
 }
+gbc()
+{
+  export CURRENTPROJ="TCC_IND_GBC_SW"
+}
 
 udpsend()
 {
@@ -68,6 +73,7 @@ gml()
 ##################
 
 alias 10='ssh -X gbguxs10'
+alias 21='ssh -X gbguxs21'
 alias pavel='ssh pavel Users/jhogklin/init.sh'
 alias reboot='systemctl reboot'
 #alias shutdown='systemctl shutdown -h now'
@@ -83,6 +89,7 @@ alias myps='ps -leaf | grep jhogklin'
 alias level='ps -o comm $PID | grep zsh | wc -l'
 #alias zsh='/home/jhogklin/local/zsh/bin/zsh'
 alias chrome='chromium-browser  --proxy-server=http://webproxy.scan.bombardier.com'
+alias rmorig='rm **/*.orig'
 
 # navigation
 alias c='cd $HOME/$CURRENTPROJ/Implementation/TCC_SW'
