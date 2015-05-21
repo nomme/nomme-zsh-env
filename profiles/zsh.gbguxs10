@@ -35,6 +35,10 @@ bv()
 {
   export CURRENTPROJ="TCC_ER_BV_SW"
 }
+gp()
+{
+  export CURRENTPROJ="TCC_SW"
+}
 vf()
 {
   vim -p `find $2 -name $1`
@@ -125,11 +129,12 @@ alias zsh='/home/jhogklin/local/zsh/bin/zsh'
 # navigation
 alias c='cd $HOME/$CURRENTPROJ/Implementation/TCC_SW'
 alias a='cd $HOME/$CURRENTPROJ'
-alias r='cd $HOME/$CURRENTPROJ/Implementation/TCC_SW/CBR3/Implementation/source'
-alias i='cd $HOME/$CURRENTPROJ/Implementation/TCC_SW/CBI3/Implementation/source'
-alias gpu='cd $HOME/$CURRENTPROJ/Implementation/TCC_SW/GPU3/Implementation/source'
-alias tmp='cd $HOME/$CURRENTPROJ/Implementation/TCC_SW/TMP/Implementation/source'
-alias cacore='cd $HOME/$CURRENTPROJ/Implementation/TCC_SW/CA/Implementation/source'
+alias r='cd $HOME/$CURRENTPROJ/**/CBR3/Implementation/source'
+alias et='cd $HOME/$CURRENTPROJ/**/CBR3/Implementation/source/InterfaceSpecific/ETCS'
+alias i='cd $HOME/$CURRENTPROJ/**/CBI3/Implementation/source'
+alias gpu='cd $HOME/$CURRENTPROJ/**/GPU3/Implementation/source'
+alias tmp='cd $HOME/$CURRENTPROJ/**/TMP/Implementation/source'
+alias cacore='cd $HOME/$CURRENTPROJ/**/CA/Implementation/source'
 alias ila='cd $HOME/$CURRENTPROJ/Implementation/ILA*/Implementation/source'
 alias rba='cd $HOME/$CURRENTPROJ/Implementation/RBA*/Implementation/source'
 alias tm='cd $HOME/$CURRENTPROJ/Implementation/TM*/Implementation/source'
