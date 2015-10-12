@@ -77,14 +77,14 @@ function precmd()
 }
 
 HOST=`hostname`
-if [[ -f "$HOME/.zsh/profiles/zsh.$HOST" ]]
+if [[ -f "$HOME/.zsh/profiles/$HOST.zsh" ]]
 then
-  source $HOME/.zsh/profiles/zsh.$HOST 2> /dev/null
+  source $HOME/.zsh/profiles/$HOST.zsh 2> /dev/null
 fi
 
 #cat /etc/os-release | grep NAME | cut -d'"' -f 2
 DIST=`cat /etc/os-release | grep NAME | grep -Eo "Arch|Gentoo" | head -1`
-if [[ -f "$HOME/.zsh/profiles/zsh.$DIST" ]]
+if [[ -f "$HOME/.zsh/profiles/$DIST.zsh" ]]
 then
-  source $HOME/.zsh/profiles/zsh.$DIST 2> /dev/null
+  source $HOME/.zsh/profiles/$DIST.zsh 2> /dev/null
 fi

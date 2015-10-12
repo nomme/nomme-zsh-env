@@ -109,6 +109,9 @@ alias rba='cd $HOME/$CURRENTPROJ/Implementation/RBA*/Implementation/source'
 alias tm='cd $HOME/$CURRENTPROJ/Implementation/TM*/Implementation/source'
 alias ca='cd $HOME/$CURRENTPROJ/Implementation/CA*/Implementation/source'
 
+alias oldkaz='cd $HOME/$CURRENTPROJ && git checkout TCC_ER_CIS_SW_2.0.12 && git submodule update'
+alias newkaz='cd $HOME/$CURRENTPROJ && git checkout master && cd Implementation/TCC_SW && git checkout er_cis'
+
 # tmux alias
 alias kaz1='Runtmuxinit.sh kaz1'
 alias kaz2='Runtmuxinit.sh kaz2'
