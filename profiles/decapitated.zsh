@@ -1,10 +1,20 @@
 export prompt_color="$fg_brown"
 export TERM=dtterm
 export TERMINFO=/home/jhogklin/.terminfo
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/local/temp/lib:/usr/local/lib:$HOME/local/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/local/temp/lib:/usr/lib:$HOME/local/lib
 export BUILDSERVER="gbguxs10"
 export BUILDSERVERHOME="/export/home/Users/jhogklin"
-#
+
+export FZF_DEFAULT_OPTS="--bind=ctrl-j:accept"
+export FZF_DEFAULT_COMMAND='ag -g "" --ignore "*Test.[ch]pp" --ignore "*\.$"'
+
+if [ -d "$HOME/local/tmuxifier/bin" ];
+then
+  export PATH="$HOME/local/tmuxifier/bin:$PATH"
+  tmuxifier init - > /dev/null
+  source $HOME/local/tmuxifier/completion/tmuxifier.zsh
+fi
+
 # autocompletion colors
 eval `dircolors -b`
 export ZLS_COLORS=$LS_COLORS
@@ -76,9 +86,15 @@ gml()
 # End Functions
 ##################
 
+alias rev='git difftool d238319 d52df84'
 alias 10='ssh -X gbguxs10'
+alias 12='ssh -X gbguxs12'
 alias 21='ssh -X gbguxs21'
-alias pavel='ssh pavel Users/jhogklin/init.sh'
+alias pavel='ssh pavel -t Users/jhogklin/init.sh'
+alias pavel-bv='ssh pavel -t Users/jhogklinBV7/init.sh'
+alias ivan='ssh ivan -t Users/jhogklin/init.sh'
+alias z1='ssh zambia1 -t Users/jhogklin/init.sh'
+alias z2='ssh zambia2 -t Users/jhogklin/init.sh'
 alias reboot='systemctl reboot'
 #alias shutdown='systemctl shutdown -h now'
 alias gmake='make'
@@ -108,9 +124,12 @@ alias ila='cd $HOME/$CURRENTPROJ/Implementation/ILA*/Implementation/source'
 alias rba='cd $HOME/$CURRENTPROJ/Implementation/RBA*/Implementation/source'
 alias tm='cd $HOME/$CURRENTPROJ/Implementation/TM*/Implementation/source'
 alias ca='cd $HOME/$CURRENTPROJ/Implementation/CA*/Implementation/source'
+alias sst='cd $HOME/SST/TCC_KAZTestEnv'
 
 alias oldkaz='cd $HOME/$CURRENTPROJ && git checkout TCC_ER_CIS_SW_2.0.12 && git submodule update'
 alias newkaz='cd $HOME/$CURRENTPROJ && git checkout master && cd Implementation/TCC_SW && git checkout er_cis'
+alias oldbv='cd $HOME/$CURRENTPROJ && git checkout TCC_ER_BV_SW_3.4.8 && git submodule update'
+alias newbv='cd $HOME/$CURRENTPROJ && git checkout master && cd Implementation/TCC_SW && git checkout er_bv'
 
 # tmux alias
 alias kaz1='Runtmuxinit.sh kaz1'

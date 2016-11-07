@@ -88,3 +88,5 @@ if [[ -f "$HOME/.zsh/profiles/$DIST.zsh" ]]
 then
   source $HOME/.zsh/profiles/$DIST.zsh 2> /dev/null
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
