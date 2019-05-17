@@ -72,17 +72,6 @@ man()
       man "$@"
 }
 
-get_git()
-{
-    if [ $# -ne 1 ]
-    then
-        echo "get_git <repo name>" 2>/dev/null
-        exit 1
-    fi
-
-    git clone ssh://njw5c6@10.236.95.27:29418/$1 && scp -p -P 29418 njw5c6@10.236.95.27:hooks/commit-msg $1/.git/hooks/
-}
-
 function run_adb_shell()
 {
     BUFFER="adb shell $BUFFER"
@@ -151,8 +140,6 @@ alias hmm='run_remote hmm'
 alias repo='run_remote repo'
 
 alias rmout='run_remote rm -rf out'
-alias init_sem='run_remote repo init -u ssh://njw5c6@10.236.95.27:29418/vgtt_p2952_manifests -b master -m devel-o.xml --reference=/home/common/mirrors/sem'
-alias init_ihu='run_remote repo init -u ssh://njw5c6@10.236.95.27:29418/Android_bsd_manifest -b devel -m IHU_android-O-devel.xml --repo-url=http://10.236.88.232/git/git-repo --no-repo-verify --reference=/home/common/mirrors/ihu'
 alias core='ssh core-build-01'
 alias aag='ag --ignore out --ignore cts'
 
